@@ -154,16 +154,29 @@
 						function (result) {
 							// console.log(JSON.stringify(result));
 
+							// iterate over array of results and insert them into the html
 							for (i in result) {
 								tab = "#tag" + i;
 								$(tab).html(result[i]);
 								$("#atag" + i).text($(tab + " .mon_title").html());
 							}
-							$("#person table td.info").attr("colspan", 6);
+
+							// $("#person table td.info").attr("colspan", 6);
+
+							// remove loading message
 							$("#daten").html("");
+
+							// add table styling
 							$("#vplan table").addClass("table");
+
+							// open first tab
 							$("#tage a:first").click();
-							$("table").addClass("table table-responsive");
+							// $("table").addClass("table table-responsive");
+
+							// print html to console
+							for (let i = 0; i < result.length; i++) {
+								console.log(result[i]);
+							}
 						},
 						"json"
 					);
